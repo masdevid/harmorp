@@ -6,7 +6,7 @@ This document compares the performance of harmorp with the sastrawi Indonesian s
 
 - **Dataset**: 35 words (13 roots, 10 single-prefix, 12 multi-affix)
 - **Benchmark**: Criterion.rs with 100 samples per measurement
-- **Hardware**: Local development machine
+- **Hardware**: MacBook Pro (M1 Pro, 10 cores, 16 GB RAM)
 
 ## Results Summary
 
