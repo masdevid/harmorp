@@ -1,0 +1,27 @@
+{
+  "description": "Edge cases and special handling words",
+  "category": "EdgeCases",
+  "source": "manual",
+  "test_cases": [
+    {"word": "buku", "expected": "buku", "type": "no_affix", "notes": "No affixes - root word"},
+    {"word": "makan", "expected": "makan", "type": "no_affix", "notes": "Simple verb root"},
+    {"word": "rumah", "expected": "rumah", "type": "no_affix", "notes": "Simple noun root"},
+    {"word": "anak", "expected": "anak", "type": "no_affix", "notes": "Short root"},
+    {"word": "ayah", "expected": "ayah", "type": "no_affix", "notes": "Kinship term"},
+    {"word": "kata", "expected": "kata", "type": "no_affix", "notes": "Short word"},
+    {"word": "yang", "expected": "yang", "type": "no_affix", "notes": "Function word"},
+    {"word": "untuk", "expected": "untuk", "type": "no_affix", "notes": "Preposition"},
+    {"word": "di", "expected": "di", "type": "no_affix", "notes": "Very short - should stay"},
+    {"word": "ke", "expected": "ke", "type": "no_affix", "notes": "Very short - should stay"}
+  ],
+  "pending_from_scraper": [
+    "akan", "dari", "dengan", "dalam", "pada", "oleh", "untuk", "sebagai",
+    "sampai", "seperti", "ketika", "karena", "sehingga", "agar", "supaya"
+  ],
+  "ambiguous_cases": [
+    {"word": "meja", "notes": "Could be root or need checking - no prefix, furniture"},
+    {"word": "mau", "notes": "Root - want/verb or particle"},
+    {"word": "dan", "notes": "Function word - conjunction"},
+    {"word": "kau", "notes": "Pronoun - you"}
+  ]
+}

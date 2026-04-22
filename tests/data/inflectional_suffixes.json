@@ -1,0 +1,16 @@
+{
+  "description": "Test cases for inflectional suffixes (-lah, -kah, -pun, -tah)",
+  "category": "Inflectional",
+  "source": "manual",
+  "test_cases": [
+    {"word": "bukulah", "expected": "buku", "rule": "-lah suffix", "notes": "Common particle"},
+    {"word": "apakah", "expected": "apa",    "rule": "-kah suffix", "notes": "-kah stripped (no dictionary)"},
+    {"word": "meskipun", "expected": "meski", "rule": "-pun suffix", "notes": "Emphatic particle"},
+    {"word": "biarlah", "expected": "biar", "rule": "-lah suffix", "notes": "Particle"},
+    {"word": "walaupun", "expected": "walau",     "rule": "-pun suffix", "notes": "-pun stripped (no dictionary)"},
+    {"word": "sungguhlah", "expected": "sungguh", "rule": "-lah suffix", "notes": "Adverb + particle"}
+  ],
+  "pending_from_scraper": [
+    "tentulah", "mungkinkah", "sekalipun", "bolehkah", "bukankah"
+  ]
+}

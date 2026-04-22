@@ -1,0 +1,19 @@
+{
+  "description": "Test cases for derivational suffixes (-kan, -i, -an) with full confix stripping",
+  "category": "Derivational",
+  "source": "manual",
+  "test_cases": [
+    {"word": "makanan",     "expected": "makan",  "rule": "-an suffix",  "notes": "Noun from verb; no prefix"},
+    {"word": "jatuhkan",    "expected": "jatuh",  "rule": "-kan suffix", "notes": "Causative; no prefix"},
+    {"word": "bangunkan",   "expected": "bangun", "rule": "-kan suffix", "notes": "Causative; no prefix"},
+    {"word": "hidupi",      "expected": "hidup",  "rule": "-i suffix",   "notes": "Active verb; no prefix"},
+    {"word": "pembacaan",   "expected": "baca",   "rule": "pem-+an",     "notes": "pem+baca+an; full stem = baca"},
+    {"word": "pelajari",    "expected": "ajar",   "rule": "pel-+i",      "notes": "pel+ajar+i; full stem = ajar"},
+    {"word": "pemberian",   "expected": "beri",   "rule": "pem-+an",     "notes": "pem+beri+an; full stem = beri"},
+    {"word": "pengiriman",  "expected": "kirim",  "rule": "peng-+an",    "notes": "peng+kirim+an (k heuristic); full stem = kirim"}
+  ],
+  "pending_from_scraper": [
+    "pembuatan", "penulisan", "pemberitahuan", "penjelasan",
+    "pelaksanaan", "pemanfaatan", "penggunaan", "pembangunan", "penelitian"
+  ]
+}

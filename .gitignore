@@ -15,3 +15,10 @@ Thumbs.db
 
 # Misc
 *.bak
+
+# Development documentation (not tracked)
+CLAUDE.md
+.windsurfrules
+
+# Claude Code project settings (local only)
+.claude/

@@ -1,0 +1,20 @@
+{
+  "description": "Test cases for pe- prefixes (10 rules: pe-, pem-, pen-, peng-, peny-, pemper-, penge-, pel-, per-)",
+  "category": "Prefix",
+  "prefix_type": "pe-",
+  "source": "manual",
+  "test_cases": [
+    {"word": "pembaca",   "expected": "baca",  "rule": "pem + b → b",      "notes": "Labial retained"},
+    {"word": "pembuat",   "expected": "buat",  "rule": "pem + b → b",      "notes": "Labial retained"},
+    {"word": "penulis",   "expected": "tulis", "rule": "pen + vowel → t",  "notes": "t dropped, restore t"},
+    {"word": "pengamat",  "expected": "kamat", "rule": "peng + vowel → k", "notes": "k heuristic applied (no dictionary)"},
+    {"word": "penyair",   "expected": "sair",  "rule": "peny + vowel → s", "notes": "s dropped, restore s"},
+    {"word": "pelajar",   "expected": "ajar",  "rule": "pel → ajar",       "notes": "pel- drops, rest is stem"},
+    {"word": "perumahan", "expected": "rumah", "rule": "pe + r → r, -an",  "notes": "pe + rumahan, strip -an"},
+    {"word": "pekerja",   "expected": "kerja", "rule": "pe → strip",       "notes": "Simple pe-"}
+  ],
+  "pending_from_scraper": [
+    "pengguna", "pengembang", "peneliti", "pembicara",
+    "pengajar", "pengelola", "penyelenggara", "pembangun", "pengusaha"
+  ]
+}

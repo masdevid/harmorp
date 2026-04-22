@@ -1,0 +1,21 @@
+{
+  "description": "Complex forms with multiple affixes and combinations",
+  "category": "Complex",
+  "source": "manual",
+  "test_cases": [
+    {"word": "pembelajaran",       "expected": "ajar",    "rules": ["pem-", "bel-", "-an"], "notes": "pem+belajar+an → belajar → ajar"},
+    {"word": "membukakan",         "expected": "buka",    "rules": ["mem-", "-kan"],         "notes": "mem + buka + kan"},
+    {"word": "mengepulangkan",     "expected": "pulang",  "rules": ["menge-", "-kan"],       "notes": "menge + pulang + kan"},
+    {"word": "mempertimbangkan",   "expected": "timbang", "rules": ["memper-", "-kan"],      "notes": "memper + timbang + kan"},
+    {"word": "pengembangan",       "expected": "kembang", "rules": ["peng-", "-an"],         "notes": "peng + kembang + an (k heuristic)"},
+    {"word": "berdiskusi",         "expected": "diskus",  "rules": ["ber-", "-i"],        "notes": "ber + diskusi; -i suffix stripped (no dictionary)"},
+    {"word": "tercatat",           "expected": "catat",   "rules": ["ter-"],                 "notes": "ter + catat"},
+    {"word": "penyelenggaraan",    "expected": "lenggara","rules": ["peny-", "se-", "-an"],  "notes": "peny+elenggara+an → se+lenggara+an → lenggara (no dict)"}
+  ],
+  "pending_from_scraper": [
+    "pemanfaatan", "penggunaan", "pembangunan", "penelitian", "pengurangan",
+    "pemberlakuan", "penyelesaian", "penyelidikan", "penggantian", "pemberantasan",
+    "mengoperasikan", "menyelenggarakan", "mempertahankan", "mengumumkan",
+    "memperlakukan", "menyempurnakan"
+  ]
+}

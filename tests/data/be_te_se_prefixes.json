@@ -1,0 +1,19 @@
+{
+  "description": "Test cases for be-, te-, and se- prefixes",
+  "category": "Prefix",
+  "prefix_types": ["be-", "te-", "se-"],
+  "source": "manual",
+  "test_cases": [
+    {"word": "bermain",  "expected": "main",   "rule": "ber → strip", "prefix": "be-", "notes": "ber + main"},
+    {"word": "belajar",  "expected": "ajar",   "rule": "bel → strip", "prefix": "be-", "notes": "bel- (belajar special)"},
+    {"word": "bekerja",  "expected": "kerja",  "rule": "be → strip",  "prefix": "be-", "notes": "be + kerja"},
+    {"word": "terbang",  "expected": "bang",   "rule": "ter → strip", "prefix": "te-", "notes": "ter + bang"},
+    {"word": "tertawa",  "expected": "tawa",   "rule": "ter → strip", "prefix": "te-", "notes": "ter + tawa"},
+    {"word": "seratus",  "expected": "ratus",  "rule": "se → strip",  "prefix": "se-", "notes": "se + ratus"}
+  ],
+  "pending_from_scraper": [
+    "berjalan", "bertemu", "berfikir", "bersama", "berbeda",
+    "terjadi", "terlihat", "termasuk", "tersebut", "terhadap",
+    "seorang", "sebuah", "sekitar", "sejak", "selama"
+  ]
+}

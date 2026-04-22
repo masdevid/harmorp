@@ -1,0 +1,23 @@
+{
+  "description": "Test cases for me- prefixes (10 rules: me-, men-, mem-, meng-, meny-, mempel-, memper-, menge-)",
+  "category": "Prefix",
+  "prefix_type": "me-",
+  "source": "manual",
+  "test_cases": [
+    {"word": "membaca",        "expected": "baca",       "rule": "mem + b → b",          "notes": "Labial retained"},
+    {"word": "membuat",        "expected": "buat",       "rule": "mem + b → b",          "notes": "Labial retained"},
+    {"word": "memfasilitasi",  "expected": "fasilitas",  "rule": "mem + f → f",          "notes": "Loanword root; -i stripped in no-dict mode"},
+    {"word": "menyapu",        "expected": "sapu",       "rule": "meny + vowel → s",     "notes": "s dropped before ny, restore s"},
+    {"word": "menulis",        "expected": "tulis",      "rule": "men + vowel → t",      "notes": "t dropped by nasal assimilation, restore t"},
+    {"word": "mendengar",      "expected": "dengar",     "rule": "men + d → d",          "notes": "d retained (not dropped)"},
+    {"word": "mempelajari",    "expected": "ajar",       "rule": "mem+pel+ajar+i",       "notes": "Full stem: mem+pelajari→pelajar→ajar"},
+    {"word": "memperbaiki",    "expected": "baik",       "rule": "memper + -i",          "notes": "memper+baik+i"},
+    {"word": "mengecil",       "expected": "kecil",      "rule": "meng + vowel → k",     "notes": "k dropped before ng, restore k"},
+    {"word": "mengambil",      "expected": "kambil",     "rule": "meng + vowel → k", "notes": "k heuristic applied (no dictionary)"}
+  ],
+  "pending_from_scraper": [
+    "menggunakan", "menerjemahkan", "mengembangkan", "menjelaskan",
+    "mempertimbangkan", "mengumpulkan", "menyampaikan", "mengurangi",
+    "memperhatikan", "menyebabkan", "membentuk", "menciptakan"
+  ]
+}
