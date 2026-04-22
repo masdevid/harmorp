@@ -30,7 +30,7 @@ fi
 VIOLATIONS=$(grep -rn "KBBI\|kbbi\|harmorph_stemmer" src/ tests/ benches/ examples/ README.md Cargo.toml 2>/dev/null || true)
 if [ -n "$VIOLATIONS" ]; then
     echo "$VIOLATIONS"
-    fail "Proprietary references found (dictionary references, old package name) — remove before committing to public repo"
+    fail "Proprietary references found (old package name or other proprietary terms) — remove before committing to public repo"
 fi
 pass "proprietary reference guard"
 
