@@ -32,7 +32,7 @@ This implementation adds four improvements:
 
 ```toml
 [dependencies]
-harmorp = "0.1.0"
+harmorp = "0.1.1"
 ```
 
 ## Usage
@@ -122,3 +122,7 @@ Benchmarked with `cargo bench --bench stemmer_bench`:
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Sponsor
+
+If you find this project useful, consider [sponsoring](https://github.com/sponsors/masdevid) its development.
