@@ -2,22 +2,50 @@
 name = "harmorp"
 version = "0.1.0"
 edition = "2021"
-description = "Indonesian stemmer implementation using Nazief-Adriani algorithm"
-license = MIT
+authors = ["HARMorph Team"]
+description = "Enhanced Nazief-Adriani Indonesian stemmer: iterative ECS, nasal-assimilation restoration, phonotactic guards, FST dictionary, zero-alloc hot path"
+license = "MIT"
 repository = "https://github.com/masdevid/harmorp.git"
 keywords = ["indonesian", "stemmer", "nlp", "morphology"]
 categories = ["text-processing"]
 
+[features]
+default = []
+python = ["pyo3"]
+
+[dependencies]
+# FST dictionary (zero-heap mmap lookup)
+fst = "0.4"
+memmap2 = "0.9"
+
+# Avoid heap allocation in hot path for candidate lists
+smallvec = { version = "1.13", features = ["const_generics"] }
+
+# Thread-safe memoization cache
+dashmap = "6"
+
+# PyO3 Python bindings (optional, feature-gated)
+pyo3 = { version = "0.21", features = ["extension-module"], optional = true }
+
+# Serialization for config/rules
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dev-dependencies]
+pretty_assertions = "1.4"
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "stemmer_bench"
+harness = false
+
 [lib]
 name = "harmorp"
 path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
 
-[dependencies]
-fst = "0.4"
-
-[dev-dependencies]
-criterion = "0.5"
-
-[[bench]]
-name = "stemmer"
-harness = false
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"

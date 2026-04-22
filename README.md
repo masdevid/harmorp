@@ -5,11 +5,23 @@
 [![docs.rs](https://docs.rs/harmorp/badge.svg)](https://docs.rs/harmorp)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A high-performance Indonesian stemmer implementing the Enhanced Confix-Stripping (ECS) variant of the Nazief-Adriani algorithm (Asian et al., 2007).
+An Indonesian stemmer implementing the **Enhanced Confix-Stripping (ECS)** variant
+of the Nazief-Adriani algorithm (Asian et al., 2007).
 
-## Features
+## Enhancements over the original Nazief-Adriani
 
-- **Enhanced Confix-Stripping**: Full ECS algorithm with iterative affix stripping
+The original Nazief-Adriani (1996) applies one prefix and one suffix strip per pass.
+This implementation adds four improvements:
+
+| Enhancement | Effect |
+|---|---|
+| **Iterative confix-stripping** (up to 4 passes) | Handles deeply nested forms: `mempertimbangkan` → `timbang`, `pembelajaran` → `ajar` |
+| **Nasal-assimilation restoration** | Reconstructs dropped consonants: `menulis` → `tulis` (t), `menyapu` → `sapu` (s) |
+| **Phonotactic validity guards** | Discards CC-onset candidates (invalid in Indonesian), preventing over-stripping |
+| **Two-path candidate generation** | Explores both prefix-first and suffix-first orderings; ranks combined candidates higher for better no-dict accuracy |
+
+## Additional features
+
 - **Thread-safe cache**: O(1) repeated lookups via DashMap (lock-free sharded hashmap)
 - **FST dictionary**: Optional O(1) amortised root-word lookup via mmap-backed FST
 - **Zero heap allocation**: Hot path uses SmallVec and `&str` slices

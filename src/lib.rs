@@ -1,7 +1,30 @@
 //! # harmorp
 //!
-//! Indonesian stemmer implementing the Enhanced Confix-Stripping (ECS) variant of
+//! Indonesian stemmer implementing the **Enhanced Confix-Stripping (ECS)** variant of
 //! Nazief-Adriani (Asian et al., 2007).
+//!
+//! ## Enhancements over the original Nazief-Adriani algorithm
+//!
+//! The original Nazief-Adriani (1996) strips one prefix and one suffix per pass and
+//! stops after a fixed number of rounds.  This implementation adds four improvements:
+//!
+//! 1. **Iterative confix-stripping** — up to four prefix+suffix passes per word,
+//!    so deeply nested forms like `mempertimbangkan` (mem+per+timbang+kan) and
+//!    `pembelajaran` (pe+bel+ajar+an) resolve correctly.
+//!
+//! 2. **Nasal-assimilation restoration** — the `me(N)-` and `pe(N)-` families
+//!    reconstruct the dropped consonant from the phonological context
+//!    (e.g. `menulis` → restore dropped `t` → `tulis`;
+//!    `menyapu` → restore dropped `s` → `sapu`).
+//!
+//! 3. **Phonotactic validity guards** — candidate stems that begin with two
+//!    consecutive consonants (a CC onset, invalid in Indonesian) are discarded
+//!    before selection, preventing spurious over-stripping.
+//!
+//! 4. **Two-path candidate generation** — each pass explores both
+//!    *prefix-first-then-suffix* and *suffix-first-then-prefix* orderings and
+//!    ranks combined (both stripped) candidates above prefix-only ones, so the
+//!    best candidate is chosen without a dictionary in most cases.
 //!
 //! ## Performance characteristics
 //! - Dictionary lookup: O(1) amortised via mmap-backed FST (`fst` 0.4)
