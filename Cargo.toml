@@ -1,0 +1,23 @@
+[package]
+name = "harmorp"
+version = "0.1.0"
+edition = "2021"
+description = "Indonesian stemmer implementation using Nazief-Adriani algorithm"
+license = MIT
+repository = "https://github.com/masdevid/harmorp.git"
+keywords = ["indonesian", "stemmer", "nlp", "morphology"]
+categories = ["text-processing"]
+
+[lib]
+name = "harmorp"
+path = "src/lib.rs"
+
+[dependencies]
+fst = "0.4"
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "stemmer"
+harness = false
