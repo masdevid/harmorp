@@ -1,6 +1,6 @@
 [package]
 name = "harmorp"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["HARMorph Team"]
 description = "Enhanced Nazief-Adriani Indonesian stemmer: iterative ECS, nasal-assimilation restoration, phonotactic guards, FST dictionary, zero-alloc hot path"
