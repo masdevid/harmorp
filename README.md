@@ -32,7 +32,7 @@ This implementation adds four improvements:
 
 ```toml
 [dependencies]
-harmorp = "0.1.1"
+harmorp = "0.1.2"
 ```
 
 ## Usage
