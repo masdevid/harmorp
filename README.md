@@ -119,6 +119,12 @@ Benchmarked with `cargo bench --bench stemmer_bench`:
 | Single word (cold) | ~1–5 µs |
 | 10 000-word batch (hot) | ~5 ms |
 
+## Documentation
+
+- [API Documentation](docs/api.md) - Complete API reference
+- [Algorithm Documentation](docs/algorithm.md) - Detailed algorithm explanation
+- [Performance Documentation](docs/performance.md) - Performance characteristics and benchmarks
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
