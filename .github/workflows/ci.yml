@@ -72,13 +72,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check for KBBI references
+      - name: Check for proprietary references
         run: |
           if grep -rn "KBBI\|kbbi" src/ tests/ benches/ examples/ README.md Cargo.toml 2>/dev/null | grep -v "^Binary"; then
-            echo "ERROR: Found KBBI references in public repo"
+            echo "ERROR: Found proprietary references in public repo"
             exit 1
           fi
-          echo "OK: No KBBI references found"
+          echo "OK: No proprietary references found"
       - name: Check for old package name
         run: |
           if grep -rn "harmorph_stemmer" src/ tests/ benches/ examples/ README.md 2>/dev/null; then
