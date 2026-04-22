@@ -29,7 +29,7 @@ build:
 guard:
 	@echo "Scanning for proprietary references..."
 	@if grep -rn "KBBI\|kbbi\|harmorph_stemmer" src/ tests/ benches/ examples/ README.md Cargo.toml 2>/dev/null; then \
-		echo "ERROR: Proprietary references found"; exit 1; \
+		echo "ERROR: Proprietary references found (check for dictionary references, old package name)"; exit 1; \
 	else \
 		echo "OK: No proprietary references found"; \
 	fi
