@@ -44,6 +44,10 @@ harness = false
 name = "compare_bench"
 harness = false
 
+[[bench]]
+name = "accuracy_bench"
+harness = false
+
 [lib]
 name = "harmorp"
 path = "src/lib.rs"

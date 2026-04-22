@@ -125,6 +125,7 @@ Benchmarked with `cargo bench --bench stemmer_bench`:
 - [Algorithm Documentation](docs/algorithm.md) - Detailed algorithm explanation
 - [Performance Documentation](docs/performance.md) - Performance characteristics and benchmarks
 - [Benchmark Comparison](docs/benchmark_comparison.md) - harmorp vs sastrawi performance comparison
+- [Accuracy Comparison](docs/accuracy_comparison.md) - harmorp vs sastrawi accuracy comparison
 
 ## License
 
